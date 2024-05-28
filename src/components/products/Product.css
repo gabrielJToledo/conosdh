@@ -1,0 +1,35 @@
+.c-product {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.c-product__container {
+    display: flex;
+    width: 65%;
+    height: 100%;
+}
+
+.c-mainProductContainer {
+    width: 70%;
+}
+
+.c-productMenu {
+    width: 30%;
+}
+
+.c-mainProductContainer__image {
+    width: 95%;
+    height: 350px;
+}
+
+.c-mainProductContainer__basicF {
+    width: 40%;
+    padding: 30px 20px;
+}
+
+.c-mainProductContainer__detailedFeatures {
+    width: 90%;
+    padding: 30px 20px;
+}

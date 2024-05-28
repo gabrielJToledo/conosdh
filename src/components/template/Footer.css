@@ -1,0 +1,149 @@
+.footer {
+    grid-area: footer;
+    background-color: #111111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footerContainer {
+    width: 80%;
+    max-width: 1080px;
+}
+
+.footerContainer hr {
+    border-color: #5c5c5c;
+}
+
+.c-footer__linksContainer {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 30px 0;
+    height: 200px;
+    padding: 20px 0;
+}
+
+.c-footer__links {
+    display: flex;
+    flex-direction: column;
+    width: 190px;
+}
+
+.c-footer__logo {
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.c-footer__footerContent {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.c-footer__socialLinks {
+    display: flex;
+}
+
+.c-footer__socialLinks p {
+    color: #5c5c5c;
+    
+}
+
+.c-footer__socialLink {
+    margin: 0 10px;
+}
+
+.c-footer__siteResume {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.c-footer__linksContainer div {
+    width: 26%;
+}
+
+.c-footer__footerDescription {
+    color: #747577;
+    text-align: justify;
+    border-top: 1px solid #323335;
+    padding-top: 10px;
+}
+
+.c-footer__address {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.c-footer__addressSpan {
+    color: #747577;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.c-footer__link {
+    color: #747577;
+    text-decoration: none;
+    margin: 10px 0;
+    padding: 0 0 5px 10px;
+    border-bottom: 2px solid #323335;
+    transition: 0.5s;
+}
+
+.c-footer__link:hover {
+    border-color: rgb(109, 22, 22);
+}
+
+.c-footer__socialLink {
+    color: #747577;
+    cursor: pointer;
+    transition: 0.6s;
+    font-size: 22px;
+    padding: 0 15px;
+}
+
+.c-footer__phoneEmail {
+    display: flex;
+    flex-direction: column;
+}
+
+.c-footer__socialLink:hover {
+    color: rgb(109, 22, 22);
+}
+
+.c-footer__phoneEmail__span {
+    color: #747577;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 769px) {
+    .c-footer__linksContainer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: unset;
+        margin: 30px 0;
+        padding: 20px 0;
+    }
+
+    .c-footer__linksContainer .c-footer__siteResume {
+        width: 100%;
+    }
+
+    .c-footer__linksContainer div {
+        margin: 10px 0;
+        width: 70%;
+    }
+
+    .c-footer__link,
+    .c-footer__phoneEmail__span {
+        text-align: center;
+    }
+}

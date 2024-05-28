@@ -1,0 +1,58 @@
+.c-contact {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 40px 0;
+}
+
+.c-contact__container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.c-contact__contactContent {
+    display: flex;
+}
+
+.c-contact__form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px;
+}
+
+.c-contact__addressMap {
+    width: 50%;
+}
+
+.c-contact__label, .c-contact__input {
+    margin-bottom: 10px;
+}
+
+.c-contact__input {
+    height: 30px;
+}
+
+.c-contact__addressMap {
+    display: flex;
+    flex-direction: column;
+}
+
+.c-contact__links {
+    display: flex;
+    flex-direction: column;
+}
+
+.c-contact__link {
+    text-decoration: none;
+    color: black;
+}
+
+.c-contact__addressMap span, .c-contact__link {
+    margin: 10px 0;
+}
+
+.c-contact__textArea {
+    height: 100px;
+}

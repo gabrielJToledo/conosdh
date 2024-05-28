@@ -1,0 +1,117 @@
+.c-products {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 40px 0;
+    background-color: rgb(243, 243, 243);
+    box-shadow: rgb(113, 113, 113) 3px 3px 6px 0px inset;
+}
+
+.c-products__mainTxtContainer {
+    width: 85%;
+    margin: 20px 0;
+}
+
+.c-products__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+.c-products__cardContainer {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    height: 450px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.727) 0px 5px 15px;
+    transition: .3s;
+    margin: 10px 5px;
+}
+
+.c-products__cardContainer:hover {
+    box-shadow: none;
+    transform: scale(98%);
+}
+
+.c-products__image {
+    width: 100%;
+    height: 55.120;
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 4px;
+}
+
+.c-products__description {
+    display: flex;
+    padding: 20px;
+    height: 60%;
+}
+
+.c-products__descContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.c-products__mainTxtDesc {
+    width: 100%;
+    height: 80%;
+}
+
+.c-products__link {
+    text-decoration: none;
+    color: #616161;
+    font-size: .8rem;
+    width: 25%;
+}
+
+.c-products__btn {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.c-products__icon {
+    width: 15px;
+    height: 15px;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 50%;
+    transition: .5s;
+}
+
+.c-products__cardContainer:hover .c-products__icon {
+    background-color: black;
+    color: white;
+    width: 15px;
+    height: 15px;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.c-products__container-center {
+    display: flex;
+    width: 1250px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+}
+
+.c-products__h4 {
+    display: -webkit-box;
+    /* font-size: 20px; */
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

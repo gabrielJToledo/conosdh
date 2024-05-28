@@ -1,0 +1,48 @@
+.topContact {
+    width: 100%;
+    height: 30px;
+    background-color: #00a89e;
+    display: flex;
+    justify-content: center;
+}
+
+.c-topContact__contactContainer {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1080px;
+}
+
+.c-topContact__link {
+    text-decoration: none;
+    color: rgb(233, 233, 233);
+    font-size: 0.8rem;
+    margin: 0 5px;
+}
+
+.c-topContact__address {
+    font-size: 0.8rem;
+    color: rgb(233, 233, 233);
+}
+
+.c-topContact__links-mobile {
+    display: none;
+}
+
+@media (max-width: 769px) {
+    .c-topContact__topaddress, .c-topContact__topPhones {
+        display: none;
+    }
+
+    .c-topContact__contactContainer {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .c-topContact__iconLink-mobile {
+        margin: 0 5px;
+        color: white;
+    }
+}
