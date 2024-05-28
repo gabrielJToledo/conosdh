@@ -85,25 +85,27 @@ function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("./backend/sendEmail.php", formData, {
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        }
-      });
-
+      const params = new URLSearchParams();
+      for (const key in formData) {
+        params.append(key, formData[key]);
+      }
+  
+      await axios.post("./backend/sendEmail.php", params);
+  
       setFormData({
         nome: "",
         email: "",
         telefone: "",
         mensagem: ""
       });
-
+  
       setMessage("Formulário enviado com sucesso!");
       handleSnackbarOpen();
     } catch (error) {
       console.log(error);
     }
   };
+  
 
   const [open, setOpen] = useState(false);
 
