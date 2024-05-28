@@ -138,7 +138,7 @@
     text-align: center;
     font-family: "Bebas Neue", sans-serif;
     font-weight: 800;
-    font-size: 2em;
+    font-size: 1.8em;
     margin-bottom: 30px;
     /* filter: brightness(200%); */
     /* -webkit-text-stroke: 0.1px rgb(255, 255, 255); */
@@ -264,6 +264,7 @@
 
   .c-talkToUs-contact {
     margin: 0;
+    width: 80%;
   }
 }
 
@@ -295,4 +296,25 @@
     width: 100%;
     object-fit: contain;
   }
+}
+
+@media (max-width: 400px) {
+  .c-headerComponent__logo {
+    width: 160px;
+  } 
+  
+  .c-aboutUs_txt h2 {
+    font-size: 2em;
+  }
+
+  .c-aboutUs_txt p {
+    font-size: 1em;
+  }
+.c-space-divider.service {
+  height: 50px;
+} 
+
+.c-menu_mobile {
+  right: 5px;
+}
 }

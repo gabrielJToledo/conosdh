@@ -3,7 +3,6 @@ import './Footer.css'
 import { Link, animateScroll as scroll } from 'react-scroll';
 
 import { logoFooter } from '../../global'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { menu, phone, eMail } from '../../global'
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import EmailIcon from '@mui/icons-material/Email';

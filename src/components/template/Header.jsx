@@ -74,6 +74,7 @@ function Header() {
                       offset={-70}
                       duration={500}
                       className="c-headerComponent__link"
+                      onClick={toggleDrawer(false)}
                     >
                       <ListItemText primary={menuItem.menuName} />
                     </Link>

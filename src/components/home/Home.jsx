@@ -9,6 +9,9 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import { TextField, Button, Box } from '@mui/material';
 import InputMask from 'react-input-mask';
+import axios from 'axios';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 
 const gis = require("../../assets/gis.png");
 const btnSchedule = require("../../assets/btnSchedule.png");
@@ -16,7 +19,7 @@ const btnSchedule = require("../../assets/btnSchedule.png");
 const accordionData = [
   {
     title: "Cultura <br /> Organizacional",
-    content: "• Construção da Identidade empresarial: Missão, Visão e Valores <br /> • Identificação de Competências <br /> • Organizacionais <br /> • Diagnósticos e intervenções para as culturas já existentes."
+    content: "• Construção da Identidade empresarial: Missão, Visão e Valores <br /> • Identificação de Competências Organizacionais <br /> • * Diagnósticos e intervenções para as culturas já existentes."
   },
 
   {
@@ -35,8 +38,8 @@ const accordionData = [
   },
 
   {
-    title: "Liderança <br /> de Equipes",
-    content: "• Academia de Liderança <br /> • Capacitação de novos líderes <br /> • Mentoria e coaching de performance"
+    title: "NEUROCIENCIA <br /> PARA LIDERES",
+    content: "• Academia de Liderança <br /> • Formação de novos líderes <br /> • Mentoria e coaching de desempenho"
   },
 
   {
@@ -82,18 +85,37 @@ function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("path/to/your/backend.php", {
-        method: "POST",
+      await axios.post("./backend/sendEmail.php", formData, {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: new URLSearchParams(formData)
+        }
       });
-      const result = await response.text();
-      setMessage(result);
+
+      setFormData({
+        nome: "",
+        email: "",
+        telefone: "",
+        mensagem: ""
+      });
+
+      setMessage("Formulário enviado com sucesso!");
+      handleSnackbarOpen();
     } catch (error) {
-      setMessage("Erro ao enviar o e-mail.");
+      console.log(error);
     }
+  };
+
+  const [open, setOpen] = useState(false);
+
+  const handleSnackbarOpen = () => {
+    setOpen(true);
+  };
+
+  const handleSnackbarClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false);
   };
 
 
@@ -124,7 +146,7 @@ function Home() {
         <img className="c-img_gis" src={gis} alt="" />
       </div>
 
-      <div className="c-space-divider"></div>
+      <div className="c-space-divider service"></div>
 
       <div className="c-container" id="servicesLink">
         <div className="c-services_container">
@@ -222,14 +244,25 @@ function Home() {
             >
               Enviar!
             </Button>
-            {message && <p>{message}</p>}
           </Box>
 
         </div>
 
-        <div className="c-talkToUs_form">
+        <Snackbar
+          open={open}
+          autoHideDuration={3000}
+          onClose={handleSnackbarClose}
+        >
+          <MuiAlert
+            elevation={6}
+            variant="filled"
+            onClose={handleSnackbarClose}
+            severity="success"
+          >
+            {message}
+          </MuiAlert>
+        </Snackbar>
 
-        </div>
       </div>
     </section>
   );
