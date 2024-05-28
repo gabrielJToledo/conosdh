@@ -26,6 +26,11 @@
     border-radius: 15px;
     justify-content: space-between;
     background-color: #fafafa;
+    position: relative;
+}
+
+.c-menu_mobile {
+    display: none;
 }
 
 .c-headerComponent__nav {
@@ -51,7 +56,6 @@
     font-size: 1.2rem;
     font-weight: 400;
     border-right: 1px solid rgba(0, 0, 0, 0.147);
-    
 }
 
 li:last-child .c-headerComponent__link {
@@ -74,6 +78,17 @@ li:last-child .c-headerComponent__link {
 
     .c-headerComponent__headerContainer {
         justify-content: center;
-        
     }
+
+    .c-menu_mobile {
+        display: flex;
+        position: absolute;
+        right: 20px;
+        top: 28%;
+    }
+
+    .c-headerComponent__link {
+        border-right:unset;
+    }
+    
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import './Footer.css'
-import { Link } from 'react-router-dom'
+import { Link, animateScroll as scroll } from 'react-scroll';
 
 import { logoFooter } from '../../global'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -18,24 +18,28 @@ function Footer() {
             <img className='c-footer__logo' src={logoFooter} alt="" />
             <p className='c-footer__footerDescription'>A Conoscenza agradece sua visita. Para informações adicionais sobre nossos serviços e soluções, convidamos você a entrar em contato conosco.</p>
           </div>
-          {/* <div className="c-footer__address">
-            <span className='c-footer__addressSpan'><FontAwesomeIcon icon="fa-location-dot" /> {address[0].street}, {address[0].num} - {address[0].district}</span>
-          </div> */}
           <div className="c-footer__links">
             {menu.map((menu, index) => {
-              return <Link key={index} className='c-footer__link' to="/">
+              return <Link
+                activeClass="active"
+                to={menu.link}
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                key={index} className='c-footer__link'>
                 {menu.menuName}
               </Link>
             })}
           </div>
           <div className="c-footer__phoneEmail">
             {eMail.map((mail, index) => {
-              return <span key={index} className='c-footer__phoneEmail__span'> <EmailIcon/> {mail.email} </span>
+              return <a  href='mailto:contato@conoscenzadh.com' title='e-mail' key={index} className='c-footer__phoneEmail__span'> <EmailIcon className='emailIcon' /> {mail.email} </a>
             })}
             {phone.map((phone, index) => {
-              return <span className='c-footer__phoneEmail__span' key={index}>
-               <LocalPhoneIcon></LocalPhoneIcon> {phone.ddd} {phone.num}
-              </span>
+              return <a  href='tel:+5512996123692' title='Telefone' className='c-footer__phoneEmail__span' key={index}>
+                <LocalPhoneIcon></LocalPhoneIcon> {phone.ddd} {phone.num}
+              </a>
             })}
           </div>
         </section>

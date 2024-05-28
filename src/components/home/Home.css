@@ -7,6 +7,7 @@
     align-items: center;
     width: 100%;
     position: relative;
+    overflow-x: hidden;
     z-index: 1;
 }
 
@@ -38,11 +39,21 @@
 }
 
 .c-container {
+  width: 100%;
+  display: flex;
+  align-items: self-start;
+  flex-wrap: wrap;
+  max-width: 1080px;
+  position: relative;
+  z-index: 20;
+}
+
+ .c-services_container {
     width: 100%;
     display: flex;
     align-items: self-start;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     max-width: 1080px;
     position: relative;
     z-index: 20;
@@ -102,6 +113,7 @@
     background-position: -121px -184px;
     padding: 20px 10px;
     display: flex;
+    margin: 10px 15px;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
@@ -119,7 +131,7 @@
     border: unset;
     cursor: pointer;
     border-radius: 10px;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 .c-serviceCard-head {
@@ -130,9 +142,9 @@
     margin-bottom: 30px;
     /* filter: brightness(200%); */
     /* -webkit-text-stroke: 0.1px rgb(255, 255, 255); */
-    text-shadow: 0 0 8px rgb(0, 0, 0), 
-    0 0 8px rgb(0, 0, 0),
-    0 0 8px rgb(0, 0, 0); 
+    text-shadow: 0 0 3px black, 
+    0 0 3px black,
+    0 0 3px black; 
     color: transparent; 
     color: #96c949;
 }
@@ -177,3 +189,110 @@
   .c-serviceCard.card8 {
     background-image: url('../../assets/services/teamBuilding.png');
   }
+
+  .c-talkToUs {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    max-width: 1080px;
+    margin: 50px 0;
+  }
+
+  .c-talkToUs-contact {
+    width: 50%;
+    margin-left: 20px;
+  }
+
+  .c-talkToUs_form {
+    width: 50%;
+  }
+
+  .c-talkToUs-contact h2 {
+    color: #574f32;
+    font-size: 2.8em;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 10px 10px;
+    position: relative;
+  }
+
+  .c-talkToUs-contact h2::before {
+    content: ""; /* Necessário para exibir o pseudo-elemento */
+    position: absolute;
+    left: 0; /* Ajuste conforme necessário */
+    top: 100%; /* Ajuste conforme necessário */
+    transform: translateY(-50%); /* Centraliza verticalmente */
+    height: 3px; /* Espessura da linha */
+    width: 150px; /* Comprimento da linha */
+    background-color: #574f32; /* Cor da linha */
+    margin-right: 10px; /* Espaço entre a linha e o texto */
+}
+
+.c-talkToUs-btn {
+    background-color: #96c949 !important;
+}
+
+@media (max-width: 1150px) {
+  .c-headerWPPLink {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .c-img_gis {
+    display: none;
+  }
+
+  .c-aboutUs {
+    justify-content: center;
+  }
+
+  .c-aboutUs_txt {
+    width: 80%;
+  }
+}
+
+@media (max-width: 900px) {
+  .c-headerComponent__nav {
+    display: none;
+  }
+
+  .c-talkToUs_form {
+   display: none;
+  }
+
+  .c-talkToUs-contact {
+    margin: 0;
+  }
+}
+
+@media (max-width: 750px) {
+  .c-serviceCard {
+    width: 45%;
+  }
+  .c-aboutUs_txt {
+    width: 70%;
+}
+
+.c-footer__phoneEmail {
+  align-items: center;
+}
+
+.c-footer__linksContainer .c-footer__siteResume {
+  width: 70% !important;
+}
+}
+
+@media (max-width: 600px) {
+  .c-serviceCard {
+    width: 80%;
+  }
+}
+
+@media (max-width: 546px) {
+  .c-btnSchedule {
+    width: 100%;
+    object-fit: contain;
+  }
+}

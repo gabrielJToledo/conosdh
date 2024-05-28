@@ -88,6 +88,7 @@
 .c-footer__link {
     color: #747577;
     text-decoration: none;
+    cursor: pointer;
     margin: 10px 0;
     padding: 0 0 5px 10px;
     border-bottom: 2px solid #323335;
@@ -120,6 +121,11 @@
     margin: 10px 0;
     display: flex;
     align-items: center;
+    text-decoration: none;
+}
+
+.emailIcon {
+    margin-right: 5px;
 }
 
 @media (max-width: 769px) {
