@@ -218,15 +218,15 @@
   }
 
   .c-talkToUs-contact h2::before {
-    content: ""; /* Necessário para exibir o pseudo-elemento */
+    content: ""; 
     position: absolute;
-    left: 0; /* Ajuste conforme necessário */
-    top: 100%; /* Ajuste conforme necessário */
-    transform: translateY(-50%); /* Centraliza verticalmente */
-    height: 3px; /* Espessura da linha */
-    width: 150px; /* Comprimento da linha */
-    background-color: #574f32; /* Cor da linha */
-    margin-right: 10px; /* Espaço entre a linha e o texto */
+    left: 0; 
+    top: 100%; 
+    transform: translateY(-50%); 
+    height: 3px; 
+    width: 150px; 
+    background-color: #574f32; 
+    margin-right: 10px; 
 }
 
 .c-talkToUs-btn {

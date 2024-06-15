@@ -23,8 +23,8 @@ export const eMail = []
 eMail.push({email: 'contato@conoscenzadh.com'})
 
 export let menu = [];
-menu.push({menuName: 'Home', link: 'headerSection'})
-menu.push({menuName: 'Serviços', link: 'servicesLink'})
-// menu.push({menuName: 'Biblioteca', link: 'produtos'})
-menu.push({menuName: 'Contato', link: 'contactSection'})
+menu.push({menuName: 'Home', link: 'headerSection', isTo: false})
+menu.push({menuName: 'Serviços', link: 'servicesLink', isTo: false})
+menu.push({menuName: 'Biblioteca', link: 'produtos', isTo: true})
+menu.push({menuName: 'Contato', link: 'contactSection', isTo: false})
 

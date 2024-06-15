@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Header.css';
+import { Link as LinkRouter } from 'react-router-dom'
 import { logo, linkLogo, menu, phone } from '../../global';
 import { Link, animateScroll as scroll } from 'react-scroll';
 import talkToUs from '../../assets/talkToUs.png';
@@ -35,7 +36,7 @@ function Header() {
             <ul className="c-headerComponent__firstUl">
               {menu.map((menuItem, index) => (
                 <li key={index}>
-                  <Link
+                {!menuItem.isTo &&  <Link
                     activeClass="active"
                     to={menuItem.link}
                     spy={true}
@@ -45,7 +46,16 @@ function Header() {
                     className="c-headerComponent__link"
                   >
                     {menuItem.menuName}
-                  </Link>
+                  </Link>}
+
+                  {menuItem.isTo &&  <LinkRouter
+                    activeClass="active"
+                    to={menuItem.link}
+                    className="c-headerComponent__link"
+                  >
+                    {menuItem.menuName}
+                  </LinkRouter>}
+                 
                 </li>
               ))}
             </ul>

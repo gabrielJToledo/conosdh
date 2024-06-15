@@ -4,9 +4,10 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 40px 0;
-    background-color: rgb(243, 243, 243);
-    box-shadow: rgb(113, 113, 113) 3px 3px 6px 0px inset;
+    padding: 40px 0 60px 0;
+    margin: 30px 0 10px 0;
+    border-top: 1px solid rgb(214, 214, 214);
+    border-bottom: 1px solid rgb(214, 214, 214);
 }
 
 .c-products__mainTxtContainer {
@@ -114,4 +115,54 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.c-products-container {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.c-products-list{
+    display: flex;
+}
+
+.c-product-inList {
+    margin: 10px 10px;
+    width: 50%;
+}
+
+.c-products-container h2 {
+    color: #574f32;
+    font-size: 2.8em;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 10px 10px;
+    position: relative;
+}
+
+.c-products-container h2::before {
+    content: ""; 
+    position: absolute;
+    left: 0; 
+    top: 100%; 
+    transform: translateY(-50%); 
+    height: 3px; 
+    width: 110px; 
+    background-color: #574f32; 
+    margin-right: 10px; 
+}
+
+@media (max-width: 769px) {
+    .c-products-list{
+       flex-wrap: wrap;
+    }
+    .c-product-inList {
+        margin: 10px auto;
+        width: 80%;
+    }
+
+    .c-products-container h2 {
+     margin-left: 60px;
+    }
 }
