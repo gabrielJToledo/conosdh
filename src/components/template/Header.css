@@ -1,5 +1,5 @@
 .header {
-    position: absolute;
+    position: fixed; /* Mudança de absolute para fixed */
     top: 20px;
     left: 50%;
     width: 80%;
@@ -7,6 +7,7 @@
     display: flex;
     flex-direction: column;
     z-index: 2;
+    transition: all 0.5s ease-in-out; /* Adicionando transição para suavidade */
 }
 
 .c-headerComponent {
@@ -90,5 +91,29 @@ li:last-child .c-headerComponent__link {
     .c-headerComponent__link {
         border-right:unset;
     }
-    
 }
+
+/* HeadRoom */
+
+.headroom {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+  .headroom--unfixed {
+    position: relative;
+    transform: translateY(0);
+  }
+  .headroom--scrolled {
+    transition: transform 200ms ease-in-out;
+  }
+  .headroom--unpinned {
+    top: -25px !important;
+    position: fixed;
+    transform: translateY(-100%);
+  }
+  .headroom--pinned {
+    position: fixed;
+    transform: translateY(0%);
+  }

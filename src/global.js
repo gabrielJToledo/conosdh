@@ -3,7 +3,7 @@ export const siteName = 'site-base'
 
 // Phones and DDD
 export let phone = [];
-phone.push({ ddd: 12, num: '91111-1111' }) 
+phone.push({ ddd: 12, num: '92222-3232' }) 
 
 // Whatsapp
 export let whatsapp = [];
@@ -25,6 +25,6 @@ eMail.push({email: 'contato@conoscenzadh.com'})
 export let menu = [];
 menu.push({menuName: 'Home', link: 'headerSection', isTo: false})
 menu.push({menuName: 'Serviços', link: 'servicesLink', isTo: false})
-menu.push({menuName: 'Biblioteca', link: 'produtos', isTo: true})
+menu.push({menuName: 'Biblioteca', link: 'libraryId', isTo: false})
 menu.push({menuName: 'Contato', link: 'contactSection', isTo: false})
 

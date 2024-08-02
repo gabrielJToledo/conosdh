@@ -8,7 +8,7 @@ import Footer from './components/template/Footer';
 
 function App() {
   return (
-    <div className="app">
+    <div className="app" id='headerSection'>
       <Header/>
       <Content/>
       <Footer/>

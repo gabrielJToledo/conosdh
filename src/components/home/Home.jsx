@@ -34,7 +34,7 @@ const btnSchedule = require("../../assets/btnSchedule.png");
 const accordionData = [
   {
     title: "Cultura <br /> Organizacional",
-    content: "• Construção da Identidade empresarial: Missão, Visão e Valores <br /> • Identificação de Competências Organizacionais <br /> • * Diagnósticos e intervenções para as culturas já existentes."
+    content: "• Construção da Identidade empresarial: Missão, Visão e Valores <br /> • Identificação de Competências Organizacionais <br /> • Diagnósticos e intervenções para as culturas já existentes."
   },
 
   {
@@ -197,7 +197,7 @@ function Home() {
 
       <section className="c-products">
 
-      <div className='c-products-container'>
+      <div id="libraryId" className='c-products-container'>
         <h2>Biblioteca</h2>
 
         <div className='c-products-list'>
@@ -210,7 +210,7 @@ function Home() {
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                E-book Conoscenza
+                E-book Comunicação Não Violenta
               </Typography>
              
             </CardContent>
@@ -228,7 +228,7 @@ function Home() {
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                Teste Perfil Comportamental DISC
+                Teste Aqui Teu Perfil Predominante
               </Typography>
              
             </CardContent>
