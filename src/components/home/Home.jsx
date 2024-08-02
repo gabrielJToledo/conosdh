@@ -8,7 +8,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-import { TextField, Button, Box } from '@mui/material';
+import { TextField, Button, Box, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
 import InputMask from 'react-input-mask';
 import axios from 'axios';
 import Snackbar from '@mui/material/Snackbar';
@@ -28,8 +28,6 @@ import pdfTeste from '../../assets/pdf/teste-perfil-disc-conocscenza.pdf'
 
 const gis = require("../../assets/gis.png");
 const btnSchedule = require("../../assets/btnSchedule.png");
-
-
 
 const accordionData = [
   {
@@ -75,6 +73,44 @@ const accordionData = [
 ];
 
 function Home() {
+  const [openModal, setOpenModal] = useState(false);
+  const [selectedPdf, setSelectedPdf] = useState(null);
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    let tempErrors = {};
+    let isValid = true;
+
+    if (!formData.nome) {
+      tempErrors.nome = "Nome é obrigatório.";
+      isValid = false;
+    }
+    if (!formData.email) {
+      tempErrors.email = "E-mail é obrigatório.";
+      isValid = false;
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      tempErrors.email = "E-mail inválido.";
+      isValid = false;
+    }
+    if (!formData.telefone) {
+      tempErrors.telefone = "Telefone é obrigatório.";
+      isValid = false;
+    }
+
+    setErrors(tempErrors);
+    return isValid;
+  };
+
+  const handleModalOpen = (pdf) => {
+    setSelectedPdf(pdf);
+    setOpenModal(true);
+  };
+
+  const handleModalClose = () => {
+    setOpenModal(false);
+    setSelectedPdf(null);
+  };
+
   const [expandedIndex, setExpandedIndex] = useState(false);
 
   const handleToggle = (index) => {
@@ -99,28 +135,31 @@ function Home() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validateForm()) {
+      return;
+    }
+
     try {
       const params = new URLSearchParams();
       for (const key in formData) {
         params.append(key, formData[key]);
       }
-  
+
       await axios.post("./backend/sendEmail.php", params);
-  
+
       setFormData({
         nome: "",
         email: "",
         telefone: "",
         mensagem: ""
       });
-  
+
       setMessage("Formulário enviado com sucesso!");
       handleSnackbarOpen();
     } catch (error) {
       console.log(error);
     }
   };
-  
 
   const [open, setOpen] = useState(false);
 
@@ -197,49 +236,46 @@ function Home() {
 
       <section className="c-products">
 
-      <div id="libraryId" className='c-products-container'>
-        <h2>Biblioteca</h2>
+        <div id="libraryId" className='c-products-container'>
+          <h2>Biblioteca</h2>
 
-        <div className='c-products-list'>
-        <Card className='c-product-inList'>
-            <CardMedia
-              component="img"
-              alt="E-book Conoscenza"
-              height="180"
-              image={imgEbook}
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                E-book Comunicação Não Violenta
-              </Typography>
-             
-            </CardContent>
-            <CardActions>
-              <Button target='_blank' href={pdfDisc} size="small">Baixar</Button>
-            </CardActions>
-          </Card>
+          <div className='c-products-list'>
+            <Card className='c-product-inList'>
+              <CardMedia
+                component="img"
+                alt="E-book Conoscenza"
+                height="180"
+                image={imgEbook}
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  E-book Comunicação Não Violenta
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button size="small" onClick={() => handleModalOpen(pdfDisc)}>Baixar</Button>
+              </CardActions>
+            </Card>
 
-          <Card className='c-product-inList'>
-            <CardMedia
-              component="img"
-              alt="E-book Conoscenza"
-              height="180"
-              image={imgEDisc}
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Teste Aqui Teu Perfil Predominante
-              </Typography>
-             
-            </CardContent>
-            <CardActions>
-              <Button target='_blank' href={pdfTeste} size="small">Baixar</Button>
-            </CardActions>
-          </Card>
-
+            <Card className='c-product-inList'>
+              <CardMedia
+                component="img"
+                alt="E-book Conoscenza"
+                height="180"
+                image={imgEDisc}
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  Teste Aqui Teu Perfil Predominante
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button size="small" onClick={() => handleModalOpen(pdfTeste)}>Baixar</Button>
+              </CardActions>
+            </Card>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       <div className="c-talkToUs" id="contactSection">
         <div className="c-talkToUs-contact">
@@ -327,6 +363,99 @@ function Home() {
         </Snackbar>
 
       </div>
+
+      <Dialog open={openModal} onClose={handleModalClose}>
+        <DialogTitle>Baixar PDF</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Para baixar o PDF, por favor preencha o formulário abaixo:
+          </DialogContentText>
+          <Box
+            component="form"
+            sx={{
+              '& .MuiTextField-root': { width: '100%' },
+              '& .MuiButton-root': { width: '100%' }
+            }}
+            noValidate
+            autoComplete="off"
+            onSubmit={(e) => {
+              handleSubmit(e);
+              if (validateForm()) {
+                handleModalClose();
+                window.open(selectedPdf, '_blank');
+              }
+            }}
+          >
+            <TextField
+              required
+              className="my-2"
+              id="nome"
+              label="Nome"
+              variant="outlined"
+              placeholder="Digite seu nome..."
+              value={formData.nome}
+              onChange={handleChange}
+              error={!!errors.nome}
+              helperText={errors.nome}
+            />
+            <TextField
+              required
+              className="my-2"
+              id="email"
+              label="E-mail"
+              variant="outlined"
+              placeholder="Digite seu e-mail..."
+              value={formData.email}
+              onChange={handleChange}
+              error={!!errors.email}
+              helperText={errors.email}
+            />
+            <InputMask
+              mask="(99) 99999-9999"
+              maskChar=" "
+              value={formData.telefone}
+              onChange={handleChange}
+            >
+              {() => (
+                <TextField
+                  required
+                  className="my-2"
+                  id="telefone"
+                  label="Telefone"
+                  variant="outlined"
+                  placeholder="Digite seu telefone..."
+                  type="tel"
+                  error={!!errors.telefone}
+                  helperText={errors.telefone}
+                />
+              )}
+            </InputMask>
+            <TextField
+              id="mensagem"
+              className="my-2"
+              label="Mensagem"
+              variant="outlined"
+              placeholder="Digite sua mensagem..."
+              multiline
+              rows={4}
+              value={formData.mensagem}
+              onChange={handleChange}
+              error={!!errors.mensagem}
+              helperText={errors.mensagem}
+            />
+            <Button
+              variant="contained"
+              type="submit"
+              className="c-talkToUs-btn"
+            >
+              Enviar e Baixar
+            </Button>
+          </Box>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleModalClose}>Cancelar</Button>
+        </DialogActions>
+      </Dialog>
     </section>
   );
 }

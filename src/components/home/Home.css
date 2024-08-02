@@ -229,6 +229,10 @@
     margin-right: 10px; 
 }
 
+.my-2 {
+  margin: 10px 0 !important;
+}
+
 .c-talkToUs-btn {
     background-color: #96c949 !important;
 }
