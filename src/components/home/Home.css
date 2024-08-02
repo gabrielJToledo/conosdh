@@ -2,40 +2,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 .c-homeContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    position: relative;
-    overflow-x: hidden;
-    z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  z-index: 1;
 }
 
 .c-homeContent::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .c-sliderContainer {
-    width: 100%;
+  width: 100%;
 }
 
 .c-space-divider {
-    height: 170px;
-    width: 100%;
+  height: 170px;
+  width: 100%;
 }
 
 .c-aboutUs {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    max-width: 1080px;
-    position: relative;
-    z-index: 20;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  max-width: 1080px;
+  position: relative;
+  z-index: 20;
 }
 
 .c-container {
@@ -48,193 +48,197 @@
   z-index: 20;
 }
 
- .c-services_container {
-    width: 100%;
-    display: flex;
-    align-items: self-start;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 1080px;
-    position: relative;
-    z-index: 20;
+.c-services_container {
+  width: 100%;
+  display: flex;
+  align-items: self-start;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1080px;
+  position: relative;
+  z-index: 20;
 }
 
 .c-aboutUs_txt {
-    width: 60%;
-    box-shadow: rgba(0, 0, 0, 0.096) 0px 0px 20px 1px;
-    border-radius: 45px;
-    border: 1px solid #eaeaea;
-    display: flex;
-    flex-direction: column;
-    padding: 20px 40px;
-    background-image: url('../../assets/marcaDagua.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: right;
+  width: 60%;
+  box-shadow: rgba(0, 0, 0, 0.096) 0px 0px 20px 1px;
+  border-radius: 45px;
+  border: 1px solid #eaeaea;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+  background-image: url('../../assets/marcaDagua.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
 }
 
 .c-aboutUs_txt h2 {
-    color: #574f32;
-    font-size: 2.8em;
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    margin: 10px 0;
+  color: #574f32;
+  font-size: 2.8em;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 10px 0;
 }
 
 .c-aboutUs_txt p {
-    font-size: 1.25em;
-    margin: 15px 0;
+  font-size: 1.25em;
+  margin: 15px 0;
 }
 
 .c-btnSchedule {
-    height: 50px;
-    margin-top: 20px;
+  height: 50px;
+  margin-top: 20px;
 }
 
 .c-aboutUs_txt p {
-    color: #000000;
+  color: #000000;
 }
 
 .c-img_gis {
-    position: absolute;
-    right: -90px;
-    border-radius: 15px;
-    height: 800px;
-    z-index: 1;
+  position: absolute;
+  right: -90px;
+  border-radius: 15px;
+  height: 800px;
+  z-index: 1;
 }
 
 .c-serviceCard {
-    border-radius: 15px;
-    margin-bottom: 60px;
-    background-color: #c9c9c946;
-    width: 28%;
-    background-repeat: no-repeat;
-    background-position: -121px -184px;
-    padding: 20px 10px;
-    display: flex;
-    margin: 10px 15px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 0px 6px 2px;
+  border-radius: 15px;
+  margin-bottom: 60px;
+  background-color: #c9c9c946;
+  width: 28%;
+  background-repeat: no-repeat;
+  background-position: -121px -184px;
+  padding: 20px 10px;
+  display: flex;
+  margin: 10px 15px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 0px 6px 2px;
 }
 
 
 
 .c-btn-knowmore {
-    margin-top: 20px;
-    padding: 5px 10px;
-    background-color: #96c949;
-    color: white;
-    font-weight: bold;
-    border: unset;
-    cursor: pointer;
-    border-radius: 10px;
-    font-size: 1em;
+  margin-top: 20px;
+  padding: 5px 10px;
+  background-color: #96c949;
+  color: white;
+  font-weight: bold;
+  border: unset;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 1em;
 }
 
 .c-serviceCard-head {
-    text-align: center;
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 800;
-    font-size: 1.8em;
-    margin-bottom: 30px;
-    /* filter: brightness(200%); */
-    /* -webkit-text-stroke: 0.1px rgb(255, 255, 255); */
-    text-shadow: 0 0 3px black, 
+  text-align: center;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 800;
+  font-size: 1.8em;
+  margin-bottom: 30px;
+  /* filter: brightness(200%); */
+  /* -webkit-text-stroke: 0.1px rgb(255, 255, 255); */
+  text-shadow: 0 0 3px black,
     0 0 3px black,
-    0 0 3px black; 
-    color: transparent; 
-    color: #96c949;
+    0 0 3px black;
+  color: transparent;
+  color: #96c949;
 }
 
 .c-serviceCard-txt {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    line-height: 30px;
-    padding: 0 20px;
-    font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  line-height: 30px;
+  padding: 0 20px;
+  font-style: normal;
 }
 
 .c-serviceCard.card1 {
-    background-image: url('../../assets/services/cultura-org.png');
-  }
+  background-image: url('../../assets/services/cultura-org.png');
+}
 
-  .c-serviceCard.card2 {
-    background-image: url('../../assets/services/recrutamento.png');
-  }
+.c-serviceCard.card2 {
+  background-image: url('../../assets/services/recrutamento.png');
+}
 
-  .c-serviceCard.card3 {
-    background-image: url('../../assets/services/consultoria.png');
-  }
+.c-serviceCard.card3 {
+  background-image: url('../../assets/services/consultoria.png');
+}
 
-  .c-serviceCard.card4 {
-    background-image: url('../../assets/services/clima.png');
-  }
+.c-serviceCard.card4 {
+  background-image: url('../../assets/services/clima.png');
+}
 
-  .c-serviceCard.card5 {
-    background-image: url('../../assets/services/lideranca.png');
-  }
+.c-serviceCard.card5 {
+  background-image: url('../../assets/services/lideranca.png');
+}
 
-  .c-serviceCard.card6 {
-    background-image: url('../../assets/services/desenvolvimento.png');
-  }
+.c-serviceCard.card6 {
+  background-image: url('../../assets/services/desenvolvimento.png');
+}
 
-  .c-serviceCard.card7 {
-    background-image: url('../../assets/services/mentoria.png');
-  }
+.c-serviceCard.card7 {
+  background-image: url('../../assets/services/mentoria.png');
+}
 
-  .c-serviceCard.card8 {
-    background-image: url('../../assets/services/teamBuilding.png');
-  }
+.c-serviceCard.card8 {
+  background-image: url('../../assets/services/teamBuilding.png');
+}
 
-  .c-talkToUs {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    max-width: 1080px;
-    margin: 50px 0;
-  }
+.c-talkToUs {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  max-width: 1080px;
+  margin: 50px 0;
+}
 
-  .c-talkToUs-contact {
-    width: 50%;
-    margin-left: 20px;
-  }
+.c-talkToUs-contact {
+  width: 50%;
+  margin-left: 20px;
+}
 
-  .c-talkToUs_form {
-    width: 50%;
-  }
+.c-talkToUs_form {
+  width: 50%;
+}
 
-  .c-talkToUs-contact h2 {
-    color: #574f32;
-    font-size: 2.8em;
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    margin: 10px 10px;
-    position: relative;
-  }
+.c-talkToUs-contact h2 {
+  color: #574f32;
+  font-size: 2.8em;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 10px 10px;
+  position: relative;
+}
 
-  .c-talkToUs-contact h2::before {
-    content: ""; 
-    position: absolute;
-    left: 0; 
-    top: 100%; 
-    transform: translateY(-50%); 
-    height: 3px; 
-    width: 150px; 
-    background-color: #574f32; 
-    margin-right: 10px; 
+.c-talkToUs-contact h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 100%;
+  transform: translateY(-50%);
+  height: 3px;
+  width: 150px;
+  background-color: #574f32;
+  margin-right: 10px;
 }
 
 .my-2 {
   margin: 10px 0 !important;
 }
 
+.show-mobile {
+  display: none;
+}
+
 .c-talkToUs-btn {
-    background-color: #96c949 !important;
+  background-color: #96c949 !important;
 }
 
 @media (max-width: 1150px) {
@@ -263,7 +267,7 @@
   }
 
   .c-talkToUs_form {
-   display: none;
+    display: none;
   }
 
   .c-talkToUs-contact {
@@ -276,17 +280,36 @@
   .c-serviceCard {
     width: 45%;
   }
+
+  .c-aboutUs {
+    flex-direction: column;
+  }
+
   .c-aboutUs_txt {
+    background-color: white;
     width: 70%;
-}
+    margin-top: 350px;
+    z-index: 5;
+  }
 
-.c-footer__phoneEmail {
-  align-items: center;
-}
+  .c-footer__phoneEmail {
+    align-items: center;
+  }
 
-.c-footer__linksContainer .c-footer__siteResume {
-  width: 70% !important;
-}
+  .c-footer__linksContainer .c-footer__siteResume {
+    width: 70% !important;
+  }
+
+  .show-mobile {
+    display: flex;
+  }
+
+  .c-img_gis-mobile {
+    position: absolute;
+    top: -200px;
+    height: 80%;
+    z-index: -1;
+  }
 }
 
 @media (max-width: 600px) {
@@ -305,8 +328,8 @@
 @media (max-width: 400px) {
   .c-headerComponent__logo {
     width: 160px;
-  } 
-  
+  }
+
   .c-aboutUs_txt h2 {
     font-size: 2em;
   }
@@ -314,11 +337,12 @@
   .c-aboutUs_txt p {
     font-size: 1em;
   }
-.c-space-divider.service {
-  height: 50px;
-} 
 
-.c-menu_mobile {
-  right: 5px;
-}
+  .c-space-divider.service {
+    height: 50px;
+  }
+
+  .c-menu_mobile {
+    right: 5px;
+  }
 }

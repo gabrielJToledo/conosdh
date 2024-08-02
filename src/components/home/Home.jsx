@@ -184,6 +184,8 @@ function Home() {
       <div className="c-space-divider"></div>
 
       <div className="c-aboutUs">
+        <img className="c-img_gis-mobile show-mobile" src={gis} alt="Gislaine Lavinia" title="Gislaine Lavinia" />
+
         <div className="c-aboutUs_txt">
           <h2>
             Transformando vidas, carreiras e <br />
@@ -199,7 +201,7 @@ function Home() {
           </a>
         </div>
 
-        <img className="c-img_gis" src={gis} alt="" />
+        <img className="c-img_gis" src={gis} alt="Gislaine Lavinia" title="Gislaine Lavinia" />
       </div>
 
       <div className="c-space-divider service"></div>
